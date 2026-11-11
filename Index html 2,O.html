@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="K-EDU explores South Korea's education system, school life, examinations, universities and future.">
+  <title>K-EDU — The Korean Education Experience</title>
+<meta name="description" content="Explore South Korea’s education system, school life, university pathways and learning culture with K-EDU.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <style>
+
+/* K-EDU PREMIUM EDITION — editorial ivory, ink and jade visual system */
+:root{
+  --navy:#f6f3ed;--navy2:#eee9df;--panel:#fffdf9;--white:#202b29;
+  --muted:#68736d;--red:#c45b4d;--blue:#2f7668;--line:rgba(32,43,41,.13);
+  --ink:#202b29;--jade:#2f7668;--sand:#e8e1d5;--paper:#fbf9f5;
+}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{font-family:"DM Sans",sans-serif;background:var(--paper);color:var(--ink);line-height:1.75}
+h1,h2,h3,h4,.brand{font-family:Manrope,sans-serif;font-weight:800;letter-spacing:-.045em;color:var(--ink)}
+a{color:var(--jade)}
+.text-muted-custom{color:var(--muted)!important}
+.eyebrow{color:var(--red);text-transform:uppercase;letter-spacing:.19em;font-size:.72rem;font-weight:800}
+.navbar{background:rgba(251,249,245,.92);backdrop-filter:blur(18px);border-bottom:1px solid var(--line);padding:17px 0;box-shadow:0 5px 24px rgba(28,36,32,.035)}
+.navbar-brand{font-family:Manrope;font-weight:800;letter-spacing:-.075em;font-size:1.55rem;color:var(--ink)!important}
+.brand-dot{color:var(--red)}
+.nav-link{color:#53615b!important;font-size:.78rem;font-weight:700;letter-spacing:.025em;padding:.65rem .72rem!important}
+.nav-link:hover,.nav-link.active{color:var(--red)!important}
+.navbar-toggler{border:1px solid var(--line);padding:.45rem .65rem}
+.navbar-toggler-icon{filter:invert(.7)}
+.hero{
+ min-height:760px;display:flex;align-items:center;position:relative;overflow:hidden;
+ background:
+ linear-gradient(90deg,rgba(14,28,25,.88) 0%,rgba(14,28,25,.67) 48%,rgba(14,28,25,.12) 100%),
+ url('https://images.unsplash.com/photo-1549693578-d683be217e58?auto=format&fit=crop&w=2200&q=90') center/cover;
+}
+.hero:before{content:"SEOUL  ·  SOUTH KOREA";position:absolute;right:5%;top:18%;writing-mode:vertical-rl;color:rgba(255,255,255,.62);font-size:.65rem;letter-spacing:.28em;font-weight:700}
+.hero:after{content:"";position:absolute;inset:auto 0 0;height:120px;background:linear-gradient(transparent,var(--paper));pointer-events:none}
+.hero-content{position:relative;z-index:1;padding-top:110px;padding-bottom:125px}
+.hero .eyebrow{color:#f0b4a7}
+.hero h1{font-size:clamp(3.3rem,7.7vw,7.2rem);line-height:.99;max-width:920px;color:#fff;letter-spacing:-.075em}
+.hero h1 span{color:#f0b4a7;display:block}
+.hero-copy{max-width:610px;color:rgba(255,255,255,.83);font-size:1.08rem;line-height:1.8}
+.hero .h3{color:#fff;font-family:Manrope;font-size:1.7rem}
+.hero small{color:rgba(255,255,255,.7)!important;letter-spacing:.04em}
+.btn-kred{background:var(--red);color:#fff;border:1px solid var(--red);border-radius:4px;padding:14px 24px;font-weight:700;letter-spacing:.02em;transition:all .25s}
+.btn-kred:hover{background:#a9473c;border-color:#a9473c;color:#fff;transform:translateY(-2px)}
+.btn-outline-light{border-radius:4px;padding:13px 23px;font-weight:700;border-color:rgba(255,255,255,.7);color:#fff}
+.btn-outline-light:hover{background:#fff;color:var(--ink)}
+.section{padding:112px 0}
+.section-alt{background:#eee9df}
+.section-heading{font-size:clamp(2.35rem,4.6vw,4.15rem);line-height:1.06;letter-spacing:-.065em;max-width:780px}
+.section-intro{max-width:690px;color:var(--muted);font-size:1.02rem;line-height:1.85}
+.glass-card{height:100%;background:var(--panel);border:1px solid var(--line);border-radius:5px;padding:30px;box-shadow:0 12px 35px rgba(35,43,38,.045);transition:transform .3s,border-color .3s,box-shadow .3s}
+.glass-card:hover{transform:translateY(-6px);border-color:rgba(196,91,77,.45);box-shadow:0 18px 45px rgba(35,43,38,.09)}
+.glass-card h3,.glass-card h4{color:var(--ink)}
+.icon-box{width:48px;height:48px;border-radius:4px;background:#e7eee8;color:var(--jade);display:grid;place-items:center;font-size:1.35rem;margin-bottom:20px}
+.stat-card{height:100%;border:1px solid var(--line);border-radius:4px;padding:24px;background:rgba(255,255,255,.58)}
+.stat-number{font:800 clamp(1.8rem,4vw,2.8rem) Manrope;color:var(--jade);letter-spacing:-.06em}
+.stat-label{font-size:.86rem;color:var(--muted);line-height:1.55}
+.stage{position:relative;padding:27px;border-radius:4px;background:#fffdf9;border:1px solid var(--line);height:100%;cursor:pointer;transition:.25s;text-align:left}
+.stage:hover,.stage.active{border-color:var(--jade);background:#e7eee8;box-shadow:0 10px 25px rgba(47,118,104,.08)}
+.stage .years{color:var(--red);font-weight:800;font-size:.7rem;letter-spacing:.13em}
+.stage h3{font-size:1.3rem;margin-top:12px;color:var(--ink)}
+.stage-detail{background:#fffdf9;border:1px solid var(--line);border-left:4px solid var(--jade);border-radius:4px;padding:32px;min-height:170px;box-shadow:0 12px 35px rgba(35,43,38,.04)}
+.stage-detail h3{color:var(--ink)}
+.photo-card{min-height:320px;border-radius:4px;overflow:hidden;position:relative;background-size:cover;background-position:center;border:1px solid var(--line);box-shadow:0 14px 35px rgba(20,30,25,.08);transition:transform .35s}
+.photo-card:hover{transform:translateY(-5px)}
+.photo-card:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,24,21,.88),rgba(10,24,21,.02) 75%)}
+.photo-card-content{position:absolute;z-index:1;bottom:24px;left:25px;right:25px}
+.photo-card-content h3{color:#fff}
+.pill{display:inline-block;padding:6px 11px;border-radius:2px;background:rgba(255,255,255,.17);color:#fff;font-size:.68rem;font-weight:800;letter-spacing:.12em}
+.table{--bs-table-bg:transparent;--bs-table-color:var(--ink);--bs-table-border-color:var(--line)}
+.table thead th{color:var(--red);font-size:.72rem;text-transform:uppercase;letter-spacing:.12em}
+.table td,.table th{padding:16px;vertical-align:middle}
+.accordion-item{background:#fffdf9;color:var(--ink);border:1px solid var(--line);border-radius:4px!important;margin-bottom:10px;overflow:hidden}
+.accordion-button{background:#fffdf9;color:var(--ink);font-weight:700}
+.accordion-button:not(.collapsed){background:#e7eee8;color:var(--jade);box-shadow:none}
+.accordion-button:focus{box-shadow:0 0 0 .2rem rgba(47,118,104,.12)}
+.quiz-option{display:block;width:100%;text-align:left;padding:15px 18px;margin:10px 0;background:#fffdf9;color:var(--ink);border:1px solid var(--line);border-radius:4px;transition:.2s}
+.quiz-option:hover{border-color:var(--jade);background:#f0f5f0}
+.quiz-option:disabled{opacity:1}
+.quiz-option.correct{border-color:#398365;background:#e8f2eb;color:#245b43}
+.quiz-option.wrong{border-color:var(--red);background:#f8eae6;color:#913f36}
+.progress{height:7px;background:#e5e0d7;border-radius:20px}
+.progress-bar{background:var(--jade)}
+.source-list li{margin-bottom:13px;color:var(--muted);padding-left:4px}
+.source-list a{color:var(--jade);text-decoration-thickness:1px;text-underline-offset:3px}
+.source-list a:hover{color:var(--red)}
+.alert{border-radius:4px!important}
+.footer{background:#202b29;border-top:1px solid rgba(255,255,255,.12);padding:48px 0;color:rgba(255,255,255,.68)}
+.footer .navbar-brand{color:#fff!important}
+.footer .small{color:rgba(255,255,255,.65)}
+.back-top{position:fixed;right:24px;bottom:24px;z-index:20;width:46px;height:46px;border:0;border-radius:50%;background:var(--jade);color:#fff;display:none;box-shadow:0 8px 22px rgba(25,70,60,.25)}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+::selection{background:#cfe0d6;color:#20332d}
+@media(max-width:767px){
+ .hero{min-height:700px;background-position:60% center}
+ .hero-content{padding-top:90px;padding-bottom:100px}
+ .hero:before{display:none}
+ .section{padding:78px 0}
+ .hero-copy{font-size:1rem}
+ .navbar-collapse{padding:14px 0}
+ .nav-link{padding:.55rem .2rem!important}
+ .photo-card{min-height:260px}
+ .glass-card{padding:23px}
+}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ .reveal{opacity:1;transform:none;transition:none}
+ *{transition:none!important}
+}
+
+  
+/* ── K-EDU 2.0 / premium university editorial system ── */
+:root{
+ --paper:#f7f5ef;--paper-deep:#eeebe2;--surface:#fffefa;--ink:#1c302c;
+ --ink-soft:#40534d;--muted:#728078;--jade:#2e7162;--jade-dark:#204f46;
+ --coral:#c66b5c;--line:rgba(28,48,44,.13);--gold:#b99b68;
+}
+body{background:var(--paper);color:var(--ink);font-size:15px}
+h1,h2,h3,h4,h5,.brand{color:var(--ink)}
+h1,h2,.section-heading{font-family:"Playfair Display",Georgia,serif;letter-spacing:-.045em;font-weight:600}
+h3,h4,h5,.navbar-brand,.nav-link,.btn{font-family:Manrope,sans-serif}
+a{color:var(--jade);transition:color .2s}
+a:hover{color:var(--coral)}
+.reading-progress{position:fixed;z-index:1100;top:0;left:0;width:0;height:3px;background:var(--coral);box-shadow:0 0 12px rgba(198,107,92,.4)}
+.navbar{min-height:78px;background:rgba(249,247,241,.91);border-bottom:1px solid rgba(28,48,44,.1);box-shadow:0 8px 30px rgba(28,48,44,.035);padding:12px 0}
+.navbar-brand{font-size:1.65rem;letter-spacing:-.09em;color:var(--ink)!important}
+.brand-dot{color:var(--coral)}
+.nav-link{font-size:.72rem;text-transform:uppercase;letter-spacing:.095em;font-weight:800;color:#596960!important;position:relative}
+.nav-link:after{content:"";position:absolute;left:.72rem;right:.72rem;bottom:5px;height:1px;background:var(--coral);transform:scaleX(0);transform-origin:left;transition:transform .25s}
+.nav-link:hover:after,.nav-link.active:after{transform:scaleX(1)}
+.nav-link.active{color:var(--jade-dark)!important}
+.navbar-toggler{border:1px solid var(--line);border-radius:3px}
+.hero{min-height:min(850px,100vh);background:
+ linear-gradient(90deg,rgba(13,31,27,.9) 0%,rgba(13,31,27,.76) 43%,rgba(13,31,27,.25) 100%),
+ url('https://images.unsplash.com/photo-1549693578-d683be217e58?auto=format&fit=crop&w=2200&q=90') center 47%/cover;
+ position:relative}
+.hero:before{content:"KOREA  /  ACADEMIC CULTURE";position:absolute;right:4.5%;top:25%;writing-mode:vertical-rl;color:rgba(255,255,255,.7);font-size:.61rem;letter-spacing:.28em;font-weight:700}
+.hero:after{height:95px;background:linear-gradient(transparent,var(--paper))}
+.hero-content{padding-top:clamp(130px,17vh,190px);padding-bottom:145px;max-width:1320px}
+.hero .eyebrow{font-size:.69rem;letter-spacing:.22em;color:#e6b6a9;display:flex;align-items:center;gap:12px}
+.hero .eyebrow:before{content:"";width:34px;height:1px;background:#e6b6a9}
+.hero h1{font-size:clamp(3.6rem,8.2vw,8rem);line-height:.99;max-width:970px;font-weight:600;letter-spacing:-.065em}
+.hero h1 span{color:#e7b2a3}
+.hero-copy{font-size:1.04rem;max-width:565px;line-height:1.9;color:rgba(255,255,255,.8)}
+.hero .h3{font-family:"Playfair Display",Georgia,serif;font-size:2rem;font-weight:600;color:#fff;letter-spacing:-.04em}
+.hero small{font-size:.69rem;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.68)!important}
+.hero .btn{font-size:.72rem;text-transform:uppercase;letter-spacing:.09em;border-radius:2px;padding:16px 23px}
+.btn-kred{background:var(--coral);border-color:var(--coral);box-shadow:0 8px 24px rgba(198,107,92,.22)}
+.btn-kred:hover{background:#ad574a;border-color:#ad574a;box-shadow:0 12px 28px rgba(198,107,92,.28)}
+.btn-outline-light{border-radius:2px}
+.hero-note{display:flex;align-items:center;gap:13px;margin-top:38px;color:rgba(255,255,255,.65);font-size:.62rem;letter-spacing:.19em;font-weight:700}
+.hero-note-line{height:1px;width:38px;background:#e7b2a3}
+.section{padding:clamp(82px,10vw,142px) 0}
+.section-alt{background:var(--paper-deep)}
+.eyebrow{font-size:.67rem;letter-spacing:.2em;color:var(--coral);font-weight:800}
+.section-heading{font-size:clamp(2.5rem,5vw,4.7rem);line-height:1.08;max-width:850px}
+.section-intro{font-size:.98rem;line-height:1.95;color:var(--muted);max-width:690px}
+.glass-card,.stat-card,.stage-detail{background:var(--surface);border:1px solid var(--line);border-radius:3px;box-shadow:0 10px 34px rgba(28,48,44,.035)}
+.glass-card{padding:32px;transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease}
+.glass-card:hover{transform:translateY(-5px);border-color:rgba(46,113,98,.3);box-shadow:0 20px 45px rgba(28,48,44,.075)}
+.glass-card h3,.glass-card h4{letter-spacing:-.035em}
+.icon-box{width:46px;height:46px;border-radius:3px;background:#e9eee8;color:var(--jade);font-size:1.2rem}
+.stat-card{padding:25px;position:relative;overflow:hidden}
+.stat-card:after{content:"";position:absolute;right:-18px;bottom:-32px;width:78px;height:78px;border:1px solid rgba(46,113,98,.15);border-radius:50%}
+.stat-number{font-family:"Playfair Display",Georgia,serif;font-size:clamp(2rem,4vw,3rem);color:var(--jade);font-weight:600}
+.stat-label{font-size:.78rem;line-height:1.7;color:var(--muted);max-width:170px}
+.stage{background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:28px;min-height:160px;transition:all .3s}
+.stage:hover,.stage.active{background:#e7eee8;border-color:var(--jade);box-shadow:0 12px 28px rgba(46,113,98,.09)}
+.stage .years{font-size:.62rem;letter-spacing:.17em;color:var(--coral)}
+.stage h3{font-family:"Playfair Display",Georgia,serif;font-size:1.5rem;font-weight:600}
+.stage-detail{padding:34px;border-left:3px solid var(--jade)}
+.stage-detail .pill{background:#e7eee8;color:var(--jade-dark)}
+.photo-card{border-radius:3px;min-height:350px;box-shadow:0 15px 35px rgba(28,48,44,.09);transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s}
+.photo-card:hover{transform:translateY(-7px);box-shadow:0 24px 50px rgba(28,48,44,.15)}
+.photo-card:after{background:linear-gradient(0deg,rgba(12,29,25,.91),rgba(12,29,25,.04) 78%)}
+.photo-card-content{left:28px;bottom:28px}
+.photo-card-content h3{font-family:"Playfair Display",Georgia,serif;font-size:1.8rem;font-weight:600}
+.pill{border-radius:2px;background:rgba(46,113,98,.1);color:var(--jade-dark);font-size:.61rem;letter-spacing:.15em;padding:7px 10px}
+.table-responsive.glass-card{padding:16px}
+.table{--bs-table-color:var(--ink);--bs-table-border-color:var(--line)}
+.table thead th{font-size:.64rem;letter-spacing:.16em;color:var(--coral);padding-top:19px;padding-bottom:19px}
+.table td,.table th{padding:17px 15px;font-size:.88rem}
+.accordion-item{background:var(--surface);border-color:var(--line);border-radius:3px!important}
+.accordion-button{background:var(--surface);color:var(--ink);font-weight:700}
+.accordion-button:not(.collapsed){background:#e7eee8;color:var(--jade-dark)}
+.quiz-option{background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:16px 19px;font-size:.9rem;transition:background .2s,border-color .2s,transform .2s}
+.quiz-option:hover:not(:disabled){background:#edf2ec;border-color:var(--jade);transform:translateX(4px)}
+.quiz-option.correct{background:#e5f0e8;border-color:#579273;color:#245b43}
+.quiz-option.wrong{background:#f8e9e5;border-color:var(--coral);color:#91463d}
+.progress{height:5px;background:#e7e3da;border-radius:0}
+.progress-bar{background:var(--jade)}
+.source-list{padding-left:1.25rem}
+.source-list li{padding:9px 0 9px 8px;border-bottom:1px solid var(--line);font-size:.9rem}
+.source-list li::marker{color:var(--coral);font-weight:800}
+.source-list a{font-weight:700;text-decoration:none;border-bottom:1px solid rgba(46,113,98,.35)}
+.source-list a:hover{border-color:var(--coral)}
+.alert{background:#e8eee8!important;border:1px solid rgba(46,113,98,.2)!important;color:#405b51!important;border-radius:3px!important}
+.footer{background:#1b302c;padding:58px 0;color:rgba(255,255,255,.68);border:0}
+.footer .navbar-brand{color:#fff!important}
+.footer .small{color:rgba(255,255,255,.67)}
+.footer-caption{font-size:.7rem;color:rgba(255,255,255,.42);margin-top:12px;letter-spacing:.04em}
+.back-top{background:var(--jade);border-radius:3px;width:44px;height:44px;box-shadow:0 8px 20px rgba(32,79,70,.25);transition:transform .2s}
+.back-top:hover{transform:translateY(-3px)}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .75s ease,transform .75s cubic-bezier(.2,.7,.2,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+::selection{background:#c9ddd3;color:#1b302c}
+@media(min-width:1200px){.navbar .container{max-width:1380px}.section .container{max-width:1200px}}
+@media(max-width:991px){
+ .navbar-collapse{background:rgba(249,247,241,.98);padding:16px 20px;border:1px solid var(--line);margin-top:12px;box-shadow:0 12px 25px rgba(28,48,44,.08)}
+ .nav-link:after{display:none}
+}
+@media(max-width:767px){
+ .hero{min-height:740px;background-position:58% center}
+ .hero-content{padding-top:125px;padding-bottom:125px}
+ .hero h1{font-size:clamp(3.35rem,15vw,5.3rem)}
+ .hero-note{font-size:.55rem;letter-spacing:.12em}
+ .section{padding:78px 0}
+ .glass-card{padding:24px}
+ .stage{padding:21px;min-height:145px}
+ .photo-card{min-height:280px}
+ .footer{padding:42px 0}
+}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ .reveal{opacity:1;transform:none;transition:none}
+ *,*:before,*:after{scroll-behavior:auto!important;transition:none!important}
+}
+
+  </style>
+</head>
+<body>
+<div class="reading-progress" id="readingProgress" aria-hidden="true"></div>
+<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+ <div class="container">
+  <a class="navbar-brand" href="#home">K-EDU<span class="brand-dot">.</span></a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+  <div class="collapse navbar-collapse" id="mainNav">
+   <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+    <li class="nav-item"><a class="nav-link" href="#overview">Overview</a></li><li class="nav-item"><a class="nav-link" href="#structure">Structure</a></li>
+    <li class="nav-item"><a class="nav-link" href="#school-life">School Life</a></li><li class="nav-item"><a class="nav-link" href="#exams">Exams</a></li>
+    <li class="nav-item"><a class="nav-link" href="#universities">Universities</a></li><li class="nav-item"><a class="nav-link" href="#comparison">Korea vs India</a></li>
+    <li class="nav-item"><a class="nav-link" href="#quiz">Quiz</a></li>
+   </ul>
+  </div>
+ </div>
+</nav>
+
+<header class="hero" id="home">
+ <div class="container hero-content">
+  <div class="eyebrow mb-3">A field guide to learning in South Korea</div>
+  <h1>Inside the world of <span>Korean education.</span></h1>
+  <p class="hero-copy mt-4 mb-4">An editorial journey through the classrooms, culture and ideas shaping one of the world's most closely watched education systems.</p>
+  <div class="d-flex flex-wrap gap-3"><a class="btn btn-kred" href="#overview">Explore the system <i class="bi bi-arrow-right ms-1"></i></a><a class="btn btn-outline-light" href="#structure">View learning journey</a></div>
+  <div class="d-flex gap-4 gap-md-5 mt-5 flex-wrap">
+   <div><div class="h3 fw-bold mb-0">6–3–3</div><small class="text-muted-custom">School structure</small></div>
+   <div><div class="h3 fw-bold mb-0">9 years</div><small class="text-muted-custom">Compulsory schooling</small></div>
+   <div><div class="h3 fw-bold mb-0">March</div><small class="text-muted-custom">Academic year begins</small></div>
+  </div>
+  <div class="hero-note"><span class="hero-note-line"></span><span>AN OPEN GUIDE TO SOUTH KOREA'S LEARNING CULTURE</span></div>
+ </div>
+</header>
+
+<main>
+<section class="section" id="overview"><div class="container">
+ <div class="row align-items-end mb-5"><div class="col-lg-7 reveal"><div class="eyebrow">01 / Introduction</div><h2 class="section-heading mt-2">Education as a national priority.</h2></div><div class="col-lg-5 reveal"><p class="section-intro mb-0">South Korea's education system combines a structured school pathway, strong public expectations for learning and a highly developed higher-education sector. It has helped build a skilled workforce, while also raising important questions about pressure and equal opportunity.</p></div></div>
+ <div class="row g-3">
+  <div class="col-md-4 reveal"><div class="glass-card"><div class="icon-box"><i class="bi bi-book-half"></i></div><h3 class="h5">Learning foundations</h3><p class="text-muted-custom mb-0">Literacy, numeracy, science, social studies and language learning form the base of school education.</p></div></div>
+  <div class="col-md-4 reveal"><div class="glass-card"><div class="icon-box"><i class="bi bi-globe-asia-australia"></i></div><h3 class="h5">Global outlook</h3><p class="text-muted-custom mb-0">Universities and scholarship programmes connect Korean education with students and researchers worldwide.</p></div></div>
+  <div class="col-md-4 reveal"><div class="glass-card"><div class="icon-box"><i class="bi bi-lightbulb"></i></div><h3 class="h5">Continuous change</h3><p class="text-muted-custom mb-0">Digital learning, curriculum updates and student well-being are important parts of current education discussions.</p></div></div>
+ </div>
+ <div class="row g-3 mt-3">
+  <div class="col-6 col-lg-3 reveal"><div class="stat-card"><div class="stat-number">6 + 3 + 3</div><div class="stat-label">Years in elementary, middle and high school</div></div></div>
+  <div class="col-6 col-lg-3 reveal"><div class="stat-card"><div class="stat-number">9</div><div class="stat-label">Years of compulsory education</div></div></div>
+  <div class="col-6 col-lg-3 reveal"><div class="stat-card"><div class="stat-number">2</div><div class="stat-label">Main school semesters each year</div></div></div>
+  <div class="col-6 col-lg-3 reveal"><div class="stat-card"><div class="stat-number">4</div><div class="stat-label">Typical years for a bachelor's degree</div></div></div>
+ </div>
+ <p class="small text-muted-custom mt-3">Structure facts: Republic of Korea Ministry of Education. University duration varies by programme and institution.</p>
+</div></section>
+
+<section class="section section-alt" id="structure"><div class="container">
+ <div class="eyebrow">02 / Education structure</div><h2 class="section-heading mt-2">A clear path from school to university.</h2><p class="section-intro mb-5">The general pathway is often described as 6–3–3–4. Select a stage to explore what students typically study.</p>
+ <div class="row g-3 mb-4" id="stageButtons">
+  <div class="col-6 col-lg-3"><button class="stage active w-100 text-start" data-stage="0"><div class="years">AGES APPROX. 6–12</div><h3>Elementary</h3><p class="small text-muted-custom mb-0">6 years</p></button></div>
+  <div class="col-6 col-lg-3"><button class="stage w-100 text-start" data-stage="1"><div class="years">AGES APPROX. 12–15</div><h3>Middle school</h3><p class="small text-muted-custom mb-0">3 years</p></button></div>
+  <div class="col-6 col-lg-3"><button class="stage w-100 text-start" data-stage="2"><div class="years">AGES APPROX. 15–18</div><h3>High school</h3><p class="small text-muted-custom mb-0">3 years</p></button></div>
+  <div class="col-6 col-lg-3"><button class="stage w-100 text-start" data-stage="3"><div class="years">AFTER HIGH SCHOOL</div><h3>Higher education</h3><p class="small text-muted-custom mb-0">Usually 2–4+ years</p></button></div>
+ </div>
+ <div class="stage-detail" aria-live="polite"><div class="pill mb-3" id="stageTag">FOUNDATION STAGE</div><h3 id="stageTitle">Elementary school</h3><p class="text-muted-custom mb-0" id="stageText">Six years of foundational education. Students develop core skills in Korean language, mathematics, social studies, science, arts and physical education. Elementary education is compulsory.</p></div>
+ <div class="alert mt-4 mb-0" style="background:rgba(91,145,238,.1);border:1px solid rgba(91,145,238,.25);color:#dce8ff"><i class="bi bi-info-circle me-2"></i>Elementary and middle school make up the nine years of compulsory education. High school is not part of compulsory education, although it is widely attended and provided free under current policy.</div>
+</div></section>
+
+<section class="section" id="school-life"><div class="container">
+ <div class="eyebrow">03 / School life</div><h2 class="section-heading mt-2">Beyond the classroom.</h2><p class="section-intro mb-5">School experiences differ between schools, cities and students. These are common features often discussed when learning about Korean school culture.</p>
+ <div class="row g-4">
+  <div class="col-md-6 col-lg-4 reveal"><div class="photo-card" style="background-image:url('https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=900&q=80')"><div class="photo-card-content"><span class="pill">CLASSROOM</span><h3 class="h4 mt-2">Learning together</h3><p class="small mb-0 text-white-50">Lessons, projects, discussion and regular assessment.</p></div></div></div>
+  <div class="col-md-6 col-lg-4 reveal"><div class="photo-card" style="background-image:url('https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=900&q=80')"><div class="photo-card-content"><span class="pill">CAMPUS LIFE</span><h3 class="h4 mt-2">Clubs and activities</h3><p class="small mb-0 text-white-50">Sports, arts, student groups and shared interests.</p></div></div></div>
+  <div class="col-md-6 col-lg-4 reveal"><div class="photo-card" style="background-image:url('https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=900&q=80')"><div class="photo-card-content"><span class="pill">STUDY HABITS</span><h3 class="h4 mt-2">Independent learning</h3><p class="small mb-0 text-white-50">Reading, revision, homework and preparation.</p></div></div></div>
+ </div>
+ <div class="row g-4 mt-3"><div class="col-lg-6"><h3 class="h4">A typical school day may include</h3><ul class="list-unstyled text-muted-custom mt-3"><li class="mb-2"><i class="bi bi-check2-circle text-info me-2"></i>Morning homeroom and announcements</li><li class="mb-2"><i class="bi bi-check2-circle text-info me-2"></i>Subject lessons and classroom activities</li><li class="mb-2"><i class="bi bi-check2-circle text-info me-2"></i>Lunch and time with classmates</li><li class="mb-2"><i class="bi bi-check2-circle text-info me-2"></i>Clubs, sports or additional learning</li></ul></div><div class="col-lg-6"><div class="glass-card"><h3 class="h5">Respect and community</h3><p class="text-muted-custom mb-0">Respect for teachers, classmates and shared school spaces is an important cultural theme. Uniform policies, school rules and activity schedules vary from one school to another.</p></div></div></div>
+</div></section>
+
+<section class="section section-alt" id="teaching"><div class="container">
+ <div class="eyebrow">04 / Teaching and learning</div><h2 class="section-heading mt-2">A mix of tradition and innovation.</h2><p class="section-intro mb-5">Korean classrooms use a range of teaching approaches. The balance between teacher-led instruction, student participation and digital resources varies by school and subject.</p>
+ <div class="row g-3"><div class="col-md-6 col-lg-3"><div class="glass-card"><div class="icon-box"><i class="bi bi-easel2"></i></div><h3 class="h5">Teacher guidance</h3><p class="small text-muted-custom mb-0">Teachers introduce concepts, explain subject knowledge and guide practice.</p></div></div><div class="col-md-6 col-lg-3"><div class="glass-card"><div class="icon-box"><i class="bi bi-people"></i></div><h3 class="h5">Collaboration</h3><p class="small text-muted-custom mb-0">Group tasks and projects help students communicate and solve problems.</p></div></div><div class="col-md-6 col-lg-3"><div class="glass-card"><div class="icon-box"><i class="bi bi-journal-check"></i></div><h3 class="h5">Assessment</h3><p class="small text-muted-custom mb-0">Schools use different forms of assessment, including tests and coursework.</p></div></div><div class="col-md-6 col-lg-3"><div class="glass-card"><div class="icon-box"><i class="bi bi-laptop"></i></div><h3 class="h5">Digital tools</h3><p class="small text-muted-custom mb-0">Online platforms and digital materials can support classroom learning.</p></div></div></div>
+</div></section>
+
+<section class="section" id="exams"><div class="container">
+ <div class="row align-items-center g-5"><div class="col-lg-6"><div class="eyebrow">05 / Examinations</div><h2 class="section-heading mt-2">The Suneung: a major academic milestone.</h2><p class="section-intro">The College Scholastic Ability Test (CSAT), commonly called <strong>Suneung</strong>, is a nationwide examination used as an important part of university admissions. Universities may also consider other application elements depending on their admission route.</p><div class="glass-card mt-4"><h3 class="h5"><i class="bi bi-pencil-square text-danger me-2"></i>Why does it matter?</h3><p class="text-muted-custom mb-0">The result can influence which universities and programmes a student may apply to. It receives significant public attention each year.</p></div></div>
+  <div class="col-lg-6"><div class="glass-card"><div class="eyebrow mb-3">EXAM SNAPSHOT</div><div class="d-flex justify-content-between align-items-center border-bottom border-secondary border-opacity-25 py-3"><span>Common name</span><strong>Suneung</strong></div><div class="d-flex justify-content-between align-items-center border-bottom border-secondary border-opacity-25 py-3"><span>Official name</span><strong class="text-end">College Scholastic Ability Test</strong></div><div class="d-flex justify-content-between align-items-center border-bottom border-secondary border-opacity-25 py-3"><span>Purpose</span><strong>University admissions</strong></div><div class="d-flex justify-content-between align-items-center py-3"><span>Subjects</span><strong class="text-end">Multiple subject areas</strong></div><p class="small text-muted-custom mb-0">The test format and admission rules can change. Refer to official annual guidance for current details.</p></div></div>
+ </div>
+</div></section>
+
+<section class="section section-alt" id="universities"><div class="container">
+ <div class="eyebrow">06 / Higher education</div><h2 class="section-heading mt-2">Universities shaping tomorrow.</h2><p class="section-intro mb-5">South Korea offers universities, junior colleges and graduate programmes across science, engineering, business, humanities, arts and more.</p>
+ <div class="row g-3">
+  <div class="col-md-4"><div class="glass-card"><span class="pill">SEOUL</span><h3 class="h4 mt-3">Seoul National University</h3><p class="text-muted-custom">A major comprehensive university with a broad range of academic disciplines and research.</p><a href="https://en.snu.ac.kr/" target="_blank" rel="noopener">Official website <i class="bi bi-arrow-up-right"></i></a></div></div>
+  <div class="col-md-4"><div class="glass-card"><span class="pill">DAEJEON</span><h3 class="h4 mt-3">KAIST</h3><p class="text-muted-custom">Known for science, engineering, technology, research and innovation.</p><a href="https://www.kaist.ac.kr/en/" target="_blank" rel="noopener">Official website <i class="bi bi-arrow-up-right"></i></a></div></div>
+  <div class="col-md-4"><div class="glass-card"><span class="pill">SEOUL</span><h3 class="h4 mt-3">Yonsei University</h3><p class="text-muted-custom">A private research university with programmes across many fields.</p><a href="https://www.yonsei.ac.kr/en_sc/" target="_blank" rel="noopener">Official website <i class="bi bi-arrow-up-right"></i></a></div></div>
+ </div>
+ <div class="glass-card mt-4"><div class="row align-items-center g-3"><div class="col-lg-8"><h3 class="h4">Interested in studying in Korea?</h3><p class="text-muted-custom mb-0">The Global Korea Scholarship (GKS) is a government scholarship programme for eligible international students. Requirements and application periods depend on the programme and year.</p></div><div class="col-lg-4 text-lg-end"><a class="btn btn-kred" href="https://www.studyinkorea.go.kr/" target="_blank" rel="noopener">Explore Study in Korea <i class="bi bi-arrow-up-right"></i></a></div></div></div>
+</div></section>
+
+<section class="section" id="hagwon"><div class="container">
+ <div class="eyebrow">07 / Private academies</div><h2 class="section-heading mt-2">What is a Hagwon?</h2><p class="section-intro mb-5">A <em>hagwon</em> is a privately operated academy or tutoring institute. Students may attend after regular school for extra lessons, language learning, subject support or examination preparation.</p>
+ <div class="row g-4 align-items-center"><div class="col-lg-5"><div class="photo-card" style="min-height:340px;background-image:url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1000&q=80')"></div></div><div class="col-lg-7"><div class="glass-card mb-3"><h3 class="h5">Why do families use them?</h3><p class="text-muted-custom mb-0">Families may seek extra practice, help with difficult subjects, language instruction or preparation for competitive admissions.</p></div><div class="glass-card"><h3 class="h5">A challenge for the system</h3><p class="text-muted-custom mb-0">Private tutoring can increase family education costs and add to students' schedules. Public discussion includes how to improve fairness and student well-being.</p></div></div></div>
+</div></section>
+
+<section class="section section-alt" id="technology"><div class="container">
+ <div class="eyebrow">08 / Technology</div><h2 class="section-heading mt-2">The connected classroom.</h2><p class="section-intro mb-5">Digital technology can support access to learning resources, feedback and collaboration. Technology is a tool: good teaching, student participation and equitable access remain essential.</p>
+ <div class="row g-3"><div class="col-md-4"><div class="glass-card"><div class="icon-box"><i class="bi bi-tablet-landscape"></i></div><h3 class="h5">Digital textbooks</h3><p class="text-muted-custom mb-0">Electronic learning materials can combine text, media and interactive activities.</p></div></div><div class="col-md-4"><div class="glass-card"><div class="icon-box"><i class="bi bi-wifi"></i></div><h3 class="h5">Online platforms</h3><p class="text-muted-custom mb-0">Learning platforms can distribute resources and support communication.</p></div></div><div class="col-md-4"><div class="glass-card"><div class="icon-box"><i class="bi bi-cpu"></i></div><h3 class="h5">Future-ready skills</h3><p class="text-muted-custom mb-0">Digital literacy, creativity and problem-solving are increasingly important.</p></div></div></div>
+</div></section>
+
+<section class="section" id="culture"><div class="container">
+ <div class="eyebrow">09 / Student culture</div><h2 class="section-heading mt-2">Learning, belonging and balance.</h2><p class="section-intro mb-5">School is also a social environment where students develop habits, friendships and interests.</p>
+ <div class="row g-3"><div class="col-md-6"><div class="glass-card"><h3 class="h5"><i class="bi bi-person-hearts text-danger me-2"></i>Respect and responsibility</h3><p class="text-muted-custom mb-0">Respectful communication, classroom expectations and responsibility for shared spaces are commonly emphasised values.</p></div></div><div class="col-md-6"><div class="glass-card"><h3 class="h5"><i class="bi bi-trophy text-danger me-2"></i>Activities and interests</h3><p class="text-muted-custom mb-0">Sports, music, arts, volunteering and clubs give students opportunities beyond academic subjects.</p></div></div><div class="col-md-6"><div class="glass-card"><h3 class="h5"><i class="bi bi-people text-danger me-2"></i>Peer relationships</h3><p class="text-muted-custom mb-0">Class groups and collaborative activities can help students build communication and teamwork skills.</p></div></div><div class="col-md-6"><div class="glass-card"><h3 class="h5"><i class="bi bi-heart-pulse text-danger me-2"></i>Well-being matters</h3><p class="text-muted-custom mb-0">A balanced education includes rest, physical activity, supportive relationships and time for personal interests.</p></div></div></div>
+</div></section>
+
+<section class="section section-alt" id="international"><div class="container">
+ <div class="eyebrow">10 / International students</div><h2 class="section-heading mt-2">A global classroom.</h2><p class="section-intro mb-5">International students can explore degree programmes, Korean-language courses and exchange opportunities at participating institutions.</p>
+ <div class="row g-4"><div class="col-lg-7"><div class="glass-card"><h3 class="h4">Possible study pathways</h3><ul class="text-muted-custom mb-0"><li class="mb-2">Bachelor's degree programmes at universities</li><li class="mb-2">Associate degree programmes at junior colleges</li><li class="mb-2">Master's and doctoral programmes</li><li class="mb-2">University-affiliated Korean language programmes</li><li>Exchange and visiting-student opportunities</li></ul></div></div><div class="col-lg-5"><div class="glass-card h-100"><span class="pill">SCHOLARSHIP SPOTLIGHT</span><h3 class="h4 mt-3">Global Korea Scholarship</h3><p class="text-muted-custom">GKS supports eligible international students through selected degree pathways. Benefits, eligibility and deadlines are set in each year's official guidelines.</p><a href="https://www.studyinkorea.go.kr/en/plan/scholarship.do" target="_blank" rel="noopener">Read official scholarship information <i class="bi bi-arrow-up-right"></i></a></div></div></div>
+</div></section>
+
+<section class="section" id="comparison"><div class="container">
+ <div class="eyebrow">11 / International perspective</div><h2 class="section-heading mt-2">South Korea vs India.</h2><p class="section-intro mb-4">A broad classroom comparison. Both countries have diverse boards, institutions and pathways, so individual experiences vary.</p>
+ <div class="table-responsive glass-card p-2 p-md-3"><table class="table table-hover mb-0"><thead><tr><th>Feature</th><th>South Korea</th><th>India</th></tr></thead><tbody>
+ <tr><th>School structure</th><td>Common 6–3–3 pathway</td><td>Multiple structures; 10+2 is a familiar pattern, with reforms and variations</td></tr>
+ <tr><th>Compulsory schooling</th><td>Elementary and middle school (9 years)</td><td>Right to Education covers ages 6–14</td></tr>
+ <tr><th>Academic year</th><td>Usually begins in March</td><td>Often begins around April–June; varies by state and board</td></tr>
+ <tr><th>University entry</th><td>CSAT and other admission routes</td><td>Board results and entrance routes such as CUET, JEE and NEET, depending on course</td></tr>
+ <tr><th>Education landscape</th><td>National framework with school and regional variation</td><td>Large, diverse system with central and state boards</td></tr>
+ </tbody></table></div>
+ <p class="small text-muted-custom mt-3">India reference: Right of Children to Free and Compulsory Education Act, 2009. This table is an introductory comparison, not a ranking.</p>
+</div></section>
+
+<section class="section section-alt" id="challenges"><div class="container">
+ <div class="eyebrow">12 / Challenges and the future</div><h2 class="section-heading mt-2">Progress with important questions.</h2><p class="section-intro mb-5">A strong education system is not measured only by examination results. It must also support fairness, curiosity and healthy development.</p>
+ <div class="row g-3"><div class="col-md-6 col-lg-3"><div class="glass-card"><div class="icon-box"><i class="bi bi-speedometer2"></i></div><h3 class="h5">Academic pressure</h3><p class="small text-muted-custom mb-0">Competition and long study schedules can affect student well-being.</p></div></div><div class="col-md-6 col-lg-3"><div class="glass-card"><div class="icon-box"><i class="bi bi-cash-coin"></i></div><h3 class="h5">Private education costs</h3><p class="small text-muted-custom mb-0">Hagwon and tutoring expenses can create financial pressure for families.</p></div></div><div class="col-md-6 col-lg-3"><div class="glass-card"><div class="icon-box"><i class="bi bi-universal-access"></i></div><h3 class="h5">Equal opportunity</h3><p class="small text-muted-custom mb-0">Access to support and learning resources should be fair for every student.</p></div></div><div class="col-md-6 col-lg-3"><div class="glass-card"><div class="icon-box"><i class="bi bi-stars"></i></div><h3 class="h5">Future skills</h3><p class="small text-muted-custom mb-0">Creativity, digital literacy, communication and lifelong learning matter.</p></div></div></div>
+ <div class="glass-card mt-4"><h3 class="h4">Our takeaway</h3><p class="text-muted-custom mb-0">South Korea's education system demonstrates the value placed on learning and academic development. Its future challenge is to combine high achievement with student well-being, inclusion and a love of lifelong learning.</p></div>
+</div></section>
+
+<section class="section" id="quiz"><div class="container"><div class="row justify-content-center"><div class="col-lg-8">
+ <div class="text-center mb-4"><div class="eyebrow">Test your knowledge</div><h2 class="section-heading mt-2">How much did you learn?</h2><p class="section-intro mx-auto">Try this short K-EDU quiz. Choose one answer for each question and see your score.</p></div>
+ <div class="glass-card"><div class="d-flex justify-content-between align-items-center mb-2"><span class="small text-muted-custom" id="quizProgressText">Question 1 of 5</span><span class="small text-muted-custom" id="quizScore"></span></div><div class="progress mb-4"><div class="progress-bar" id="quizProgress" style="width:20%"></div></div><h3 class="h4 mb-3" id="questionText">How many years are there in South Korea's elementary school stage?</h3><div id="options"></div><div class="d-flex justify-content-between align-items-center mt-4"><p class="small mb-0 text-muted-custom" id="feedback" aria-live="polite">Select an answer to continue.</p><button class="btn btn-kred" id="nextQuestion" disabled>Next <i class="bi bi-arrow-right ms-1"></i></button></div></div>
+</div></div></div></section>
+
+<section class="section section-alt" id="sources"><div class="container"><div class="eyebrow">References and further reading</div><h2 class="section-heading mt-2">Learn from reliable sources.</h2><p class="section-intro mb-4">The facts on this website are introductory summaries. Use these official and research sources for deeper reading and updated policies.</p>
+ <ol class="source-list">
+  <li><a href="https://english.moe.go.kr/sub/infoRenewal.do?m=0301&page=0301&s=english" target="_blank" rel="noopener">Republic of Korea Ministry of Education – Education System Overview</a> (school structure, compulsory education and school year).</li>
+  <li><a href="https://gpseducation.oecd.org/CountryProfile?primaryCountry=KOR&topic=EO" target="_blank" rel="noopener">OECD Education GPS – Korea</a> (education indicators and country profile).</li>
+  <li><a href="https://www.oecd.org/en/publications/exploring-korea-s-fertility-work-and-family-policy-trends_1155864e-en/full-report/" target="_blank" rel="noopener">OECD – Korea policy trends</a> (private education costs and student well-being context).</li>
+  <li><a href="https://www.studyinkorea.go.kr/" target="_blank" rel="noopener">Study in Korea – Government information portal</a> (international study pathways).</li>
+  <li><a href="https://www.studyinkorea.go.kr/en/plan/scholarship.do" target="_blank" rel="noopener">Study in Korea – Global Korea Scholarship</a> (scholarship details and annual guidance).</li>
+ </ol>
+ <p class="small text-muted-custom mt-4">Educational project created for classroom presentation. Image photographs are loaded from Unsplash and require an internet connection.</p>
+</div></section>
+</main>
+
+<footer class="footer"><div class="container d-flex flex-column flex-md-row justify-content-between gap-3"><div><a class="navbar-brand" href="#home">K-EDU<span class="brand-dot">.</span></a><div class="small mt-1">The Korean Education Experience</div><div class="footer-caption">A thoughtful guide to learning, culture and possibility.</div></div><div class="small align-self-md-end">Made for learning • South Korea 🇰🇷</div></div></footer>
+<button class="back-top" id="backTop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+const stageData=[
+ {tag:"FOUNDATION STAGE",title:"Elementary school",text:"Six years of foundational education. Students develop core skills in Korean language, mathematics, social studies, science, arts and physical education. Elementary education is compulsory."},
+ {tag:"LOWER SECONDARY",title:"Middle school",text:"Three years of compulsory education. Students study a wider range of subjects and build stronger academic foundations as they prepare for the next stage."},
+ {tag:"UPPER SECONDARY",title:"High school",text:"Three years of upper-secondary education. Students may attend general, vocational or other specialised high schools. High school is not compulsory, and pathways vary."},
+ {tag:"HIGHER EDUCATION",title:"University and college",text:"Many bachelor's programmes take around four years, while junior-college associate programmes often take two to three years. Graduate schools offer master's and doctoral study."}
+];
+document.querySelectorAll(".stage").forEach(btn=>btn.addEventListener("click",()=>{
+ document.querySelectorAll(".stage").forEach(x=>x.classList.remove("active"));btn.classList.add("active");
+ const d=stageData[Number(btn.dataset.stage)];document.getElementById("stageTag").textContent=d.tag;document.getElementById("stageTitle").textContent=d.title;document.getElementById("stageText").textContent=d.text;
+}));
+const questions=[
+ {q:"How many years are there in South Korea's elementary school stage?",a:["3 years","6 years","9 years","12 years"],correct:1,why:"Elementary school lasts six years."},
+ {q:"What is the common name for Korea's College Scholastic Ability Test?",a:["TOPIK","Suneung","Hagwon","GKS"],correct:1,why:"Suneung is the common name for the CSAT."},
+ {q:"What is a Hagwon?",a:["A public university","A school uniform","A private academy","A national exam"],correct:2,why:"Hagwons are privately operated academies or tutoring institutes."},
+ {q:"When does the Korean academic year usually begin?",a:["January","March","June","September"],correct:1,why:"The first semester usually begins in March."},
+ {q:"Which programme offers scholarships to eligible international students?",a:["Global Korea Scholarship","Suneung","Homeroom","Hagwon"],correct:0,why:"The Global Korea Scholarship (GKS) is a government scholarship programme."}
+];
+let qi=0,score=0,answered=false;
+const qText=document.getElementById("questionText"),opts=document.getElementById("options"),feedback=document.getElementById("feedback"),next=document.getElementById("nextQuestion");
+function renderQuestion(){
+ answered=false;const q=questions[qi];qText.textContent=q.q;opts.innerHTML="";feedback.textContent="Select an answer to continue.";next.disabled=true;next.innerHTML=qi===questions.length-1?'See result <i class="bi bi-check2 ms-1"></i>':'Next <i class="bi bi-arrow-right ms-1"></i>';
+ document.getElementById("quizProgressText").textContent=`Question ${qi+1} of ${questions.length}`;document.getElementById("quizProgress").style.width=`${(qi+1)/questions.length*100}%`;
+ q.a.forEach((a,i)=>{const b=document.createElement("button");b.className="quiz-option";b.textContent=a;b.addEventListener("click",()=>choose(i,b));opts.appendChild(b)});
+}
+function choose(i,button){if(answered)return;answered=true;const q=questions[qi];[...opts.children].forEach((b,j)=>{b.disabled=true;if(j===q.correct)b.classList.add("correct")});if(i===q.correct){score++;feedback.textContent="Correct! "+q.why}else{button.classList.add("wrong");feedback.textContent="Not quite. "+q.why}document.getElementById("quizScore").textContent=`Score: ${score}`;next.disabled=false}
+let quizFinished=false;
+next.addEventListener("click",()=>{
+ if(quizFinished){qi=0;score=0;quizFinished=false;document.getElementById("quizScore").textContent="";renderQuestion();return}
+ if(!answered)return;
+ if(qi<questions.length-1){qi++;renderQuestion()}
+ else{quizFinished=true;qText.textContent=`You scored ${score} out of ${questions.length}!`;opts.innerHTML="";feedback.textContent=score===5?"Excellent work — you're a K-EDU expert!":"Great effort! Review the sections and try again.";next.disabled=false;next.textContent="Try again"}
+});
+renderQuestion();
+const revealItems=document.querySelectorAll(".reveal");
+if("IntersectionObserver" in window){
+ const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("visible");observer.unobserve(e.target)}}),{threshold:.12});
+ revealItems.forEach(el=>observer.observe(el));
+}else{revealItems.forEach(el=>el.classList.add("visible"))}
+const backTop=document.getElementById("backTop");
+const readingProgress=document.getElementById("readingProgress");
+const navLinks=[...document.querySelectorAll(".nav-link")];
+const sections=[...document.querySelectorAll("main section[id]")];
+function updateScrollUI(){
+ const scrollable=document.documentElement.scrollHeight-window.innerHeight;
+ const progress=scrollable>0?(window.scrollY/scrollable)*100:0;
+ if(readingProgress)readingProgress.style.width=progress+"%";
+ if(backTop)backTop.style.display=window.scrollY>500?"grid":"none";
+ let current="";
+ sections.forEach(section=>{if(window.scrollY>=section.offsetTop-150)current=section.id});
+ navLinks.forEach(link=>link.classList.toggle("active",link.getAttribute("href")==="#"+current));
+}
+window.addEventListener("scroll",updateScrollUI,{passive:true});
+window.addEventListener("resize",updateScrollUI);
+updateScrollUI();
+if(backTop)backTop.addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));
+navLinks.forEach(a=>a.addEventListener("click",()=>{
+ const nav=document.getElementById("mainNav");
+ if(nav&&nav.classList.contains("show")&&window.bootstrap)bootstrap.Collapse.getOrCreateInstance(nav).hide();
+}));
+</script>
+</body></html>
